@@ -14,7 +14,9 @@ Take ID and paste it into the file (admin_id.txt). This is needed to text all ch
 2.  Next, find the bot (https://t.me/BotFather) and create your own bot there.
 Give your bot a name and copy its ID format ```1111111111:XXXXXX....``` then paste it into the file (bot_token.txt).
 
-3. Run ```main.py```
+3.  Add a bot to your channel and give it admin rights.
+
+4. Run ```main.py```
 
 ## Sending a message to all chats
 
