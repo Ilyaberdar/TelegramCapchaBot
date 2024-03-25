@@ -1,6 +1,7 @@
 import telebot
 from telebot import types
 from save_users import *
+import time
 from region import *
 
 with open('bot_token.txt', 'r') as file:
@@ -39,9 +40,10 @@ def answer(callback):
     if callback.message:
         if callback.data == 'apply':
             try:
+                bot.approve_chat_join_request(chat_id_global, user_id_global)
+                time.sleep(1)
                 bot.send_message(callback.message.chat.id, switchsuccsess_language(callback.from_user.language_code))
                 bot.send_message(callback.message.chat.id, switchthirdmessage_language(callback.from_user.language_code))
-                bot.approve_chat_join_request(chat_id_global, user_id_global)
 
                 # save user to list
                 update_user_ids('users_list.json', callback.message.chat.id)
